@@ -1,0 +1,11 @@
+ID_Producto	Nombre	Categoria	PrecioCompra	PrecioVenta	Stock	StockMinimo	Proveedor	Marca	Descripcion	FechaRegistro	Estado
+1	Teclado mecánico RGB	Periféricos	30.50	45.99	25	5	ProveedorTech	Logitech	Teclado mecánico con retroiluminación RGB, switches azules	2024-01-15	Activo
+2	Mouse gamer inalámbrico	Periféricos	15.00	25.50	40	10	ProveedorTech	Razer	Mouse óptico 16000 DPI, batería recargable	2024-01-16	Activo
+3	Monitor 24" Full HD	Pantallas	120.00	180.00	15	3	Distribuidora Central	Samsung	Monitor LED 24 pulgadas, 75Hz, HDMI/VGA	2024-01-20	Activo
+4	Memoria RAM 16GB DDR4	Componentes	45.00	70.00	20	5	SuministrosExpress	Kingston	Memoria RAM 16GB DDR4 3200MHz	2024-01-22	Activo
+5	SSD 512GB NVMe	Almacenamiento	55.00	85.00	30	8	ProveedorTech	Western Digital	Disco sólido NVMe M.2, velocidad lectura 3500MB/s	2024-01-25	Activo
+6	Laptop 15.6" i5	Computadoras	450.00	680.00	8	2	Distribuidora Central	HP	Intel Core i5, 8GB RAM, 256GB SSD, Windows 11	2024-02-01	Activo
+7	Webcam Full HD	Periféricos	20.00	35.00	18	5	SuministrosExpress	Logitech	Cámara web 1080p con micrófono integrado	2024-02-05	Activo
+8	Audífonos Bluetooth	Audio	25.00	42.00	22	6	ProveedorTech	Sony	Audífonos inalámbricos con cancelación de ruido	2024-02-10	Activo
+9	Disco Duro 1TB	Almacenamiento	35.00	55.00	12	4	Distribuidora Central	Seagate	Disco duro externo portátil USB 3.0	2024-02-12	Activo
+10	Mousepad gaming XL	Periféricos	8.00	15.00	35	10	SuministrosExpress	HyperX	Alfombrilla extendida 900x400mm, base antideslizante	2024-02-15	Activo

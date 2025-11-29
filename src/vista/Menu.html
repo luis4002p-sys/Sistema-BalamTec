@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SV Balamtec - Sistema de Compra-Venta</title>
+
+    <link rel="stylesheet" href="../css/sidebar.css">
+
+    <link rel="stylesheet" href="../css/Menu2.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+      <div id="sidebarContainer"></div>
+
+    <div class="container">
+        
+        <main class="main-content">
+            
+            <div class="content">
+
+                <div class="header-section">
+                    <div>
+                        <h1>Sistema de Compra-Venta</h1>
+                        <p class="subtitle">
+                            Bienvenido al panel principal, 
+                            <strong id="nombreUsuario">Rosalía</strong>.
+                            Selecciona una opción para comenzar.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cards-grid">
+                    
+                    <div class="card card-ventas" id="btnVentas" >
+                        <div class="card-icon green">
+                            <img src="../Img/ventasFlecha.png" alt="Ventas">
+                        </div>
+                        <h3>Ventas</h3>
+                        <p>Gestión de ventas y facturación</p>
+                    </div>
+
+                    <div class="card card-compras" id="btnCompras" >
+                        <div class="card-icon blue">
+                            <img src="../Img/compras.png" alt="Compras">
+                        </div>
+                        <h3>Compras</h3>
+                        <p>Administración de compras y proveedores</p>
+                    </div>
+
+                    <div class="card card-productos" id="btnProductos" >
+                        <div class="card-icon orange">
+                            <img src="../Img/productos.png" alt="Productos">
+                        </div>
+                        <h3>Productos</h3>
+                        <p>Inventario y catálogo de productos</p>
+                    </div>
+
+                    <div class="card card-usuarios" id="btnEmpleados" >
+                        <div class="card-icon purple">
+                            <img src="../Img/Usuarios.png" alt="Usuarios">
+                        </div>
+                        <h3>Gestión de Datos Personales</h3>
+                        <p>Administración de usuarios y permisos</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Empleados activos</h4>
+                        <p class="stat-value">24 <span class="stat-label">registrados</span></p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h4>Proveedores</h4>
+                        <p class="stat-value">12 <span class="stat-label">disponibles</span></p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h4>Clientes</h4>
+                        <p class="stat-value">58 <span class="stat-label">registrados</span></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../js/sidebarLoader.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../controlador/Mainmenu.js"></script>
+
+</body>
+</html>

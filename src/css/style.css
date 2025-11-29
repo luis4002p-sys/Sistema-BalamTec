@@ -1,0 +1,180 @@
+/* Fuente y fondo */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #e6e9ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+/* Imagen decorativa */
+.login-image img {
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Tarjeta del login */
+.login-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  width: 380px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Título y subtítulo */
+.login-card h2 {
+  margin-bottom: 0.5rem;
+  color: #2f3542;
+  font-size: 1.6rem;
+}
+
+.login-card p {
+  color: #57606f;
+  font-size: 0.95rem;
+  margin-bottom: 1.8rem;
+}
+
+/* Grupos de inputs */
+.input-group {
+  text-align: left;
+  margin-bottom: 1.4rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: #3d3d3d;
+}
+
+.input-group i {
+  margin-right: 6px;
+  color: #4a90e2;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #dcdde1;
+  border-radius: 0.8rem;
+  background: #f5f6fa;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  background: #ffffff;
+  box-shadow: 0 0 0 2px #4a90e233;
+}
+
+/* Password wrapper */
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1rem;
+  color: #888;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: #4a90e2;
+}
+
+/* Botón */
+button {
+  width: 100%;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button i {
+  margin-right: 6px;
+}
+
+button:hover {
+  background: #357ab8;
+  transform: translateY(-2px);
+}
+
+/* Mensaje de error o éxito */
+.msg {
+  height: 20px;                 /* Mantiene el espacio fijo aunque no haya texto */
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #e74c3c;
+  font-weight: 500;
+  text-align: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;                   /* Oculto por defecto */
+}
+
+/* Cuando el mensaje tiene texto visible */
+.msg:not(:empty) {
+  opacity: 1;
+  transform: translateY(0);
+}
+#titlebar {
+  width: 100%;
+  height: 32px;
+  background: #1e1e1e;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+#titlebar button {
+  width: 46px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+#titlebar button:hover {
+  background: #333;
+}
+
+#close-btn:hover {
+  background: red;
+}

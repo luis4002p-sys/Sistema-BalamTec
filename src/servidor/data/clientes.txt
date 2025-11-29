@@ -1,0 +1,5 @@
+id,nombre,correo,telefono,direccion,fechaRegistro,categoria
+1,José Martínez,jose.martinez@gmail.com,555-8745,Av. Principal 102,2024-02-14,Cliente frecuente
+2,"Luis","Luis4002p@gmail.com","9631772759","Calle Sur Pte 1 Guadalupe","2025-11-04","frecuente"
+3,"Maria","maria@gmail.com","7896543214","Calle Sur Pte 1 Guadalupe","2025-11-05","Nuevo"
+4,"AAAAAAAAAA","Luis4002p@gmail.com","9631772759","Calle Sur Pte 1 Guadalupe","2025-11-17","Nuevo"

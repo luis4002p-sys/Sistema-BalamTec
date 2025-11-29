@@ -1,0 +1,6 @@
+id,nombre,contacto,telefono,correo,direccion,categoria
+1,Proveedora del Norte,Juan Gómez,555-1200,juan@provnorte.com,Av. Hidalgo 123,Materiales
+2,Distribuciones Central,Ana Torres,555-8877,ana@distcentral.com,Calle 45 #210,Refacciones
+3,Suministros Express,Carlos Díaz,555-3311,carlos@suminexp.com,Col. Centro 56,Oficina
+4,ElectroParts SA,Lucía Moreno,555-2211,lucia@electroparts.com,Av. Revolución 78,Electrónica
+5,Textiles Modernos,Pedro Rojas,555-9988,pedro@textmodernos.com,Bulevar del Sol 33,Ropa

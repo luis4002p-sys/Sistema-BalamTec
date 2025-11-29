@@ -1,0 +1,6 @@
+id,nombre,puesto,salario,correo,telefono,fechaIngreso
+1,Ana López,Administradora,1800,ana@empresa.com,555-1234,2023-04-10
+2,Carlos Pérez,Desarrollador,2200,carlos@empresa.com,555-5678,2022-11-05
+3,María Torres,Contadora,1950,maria@empresa.com,555-9012,2024-01-15
+4,José Ramírez,Soporte Técnico,1700,jose@empresa.com,555-3344,2023-06-20
+5,Laura Díaz,Recursos Humanos,2100,laura@empresa.com,555-7788,2021-09-03

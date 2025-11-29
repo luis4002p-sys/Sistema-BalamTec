@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control de Clientes - SV Balamtec</title>
+  
+  <!-- CSS del Sidebar -->
+  <link rel="stylesheet" href="../css/sidebar.css">
+  
+  <!-- CSS de la página de clientes -->
+  <link rel="stylesheet" href="../css/styleCliente.css" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ============================================
+       SIDEBAR COMPONENT
+       ============================================ -->
+  <aside class="sidebar" id="sidebarComponent">
+    <div class="logo">
+      <h2>SV Balamtec</h2>
+    </div>
+
+    <div class="user-profile">
+      <div class="user-avatar">
+        <span id="userInitials">A</span>
+      </div>
+      <div class="user-info">
+        <h3 id="userName">admin</h3>
+        <p class="user-role" id="userRole">Empleado</p>
+        <p class="user-detail"><strong>Email:</strong> <span id="userEmail">admin@balamtec.com</span></p>
+        <p class="user-detail"><strong>Área:</strong> <span id="userArea">Ventas</span></p>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li class="menu-item" data-page="inicio">
+          <a href="menu.html">
+            <span class="menu-icon">
+              <i class="fas fa-home"></i>
+            </span>
+            <span>Inicio</span>
+            <span class="arrow">›</span>
+          </a>
+        </li>
+
+        <li class="menu-item active" data-page="clientes">
+          <a href="clientes.html">
+            <span class="menu-icon">
+              <i class="fas fa-users"></i>
+            </span>
+            <span>Clientes</span>
+          </a>
+        </li>
+
+        <li class="menu-item" data-page="perfil">
+          <a href="perfil.html">
+            <span class="menu-icon">
+              <i class="fas fa-user"></i>
+            </span>
+            <span>Perfil</span>
+          </a>
+        </li>
+
+        <li class="menu-item" data-page="configuracion">
+          <a href="configuracion.html">
+            <span class="menu-icon">
+              <i class="fas fa-gear"></i>
+            </span>
+            <span>Configuración</span>
+          </a>
+        </li>
+
+        <li class="menu-item" data-page="reportes">
+          <a href="reportes.html">
+            <span class="menu-icon">
+              <i class="fas fa-file-lines"></i>
+            </span>
+            <span>Reportes</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="logout">
+      <a href="#" id="btnCerrarSesion">
+        <span class="logout-icon">
+          <i class="fas fa-right-from-bracket"></i>
+        </span>
+        <span>Cerrar Sesión</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ============================================
+       CONTENIDO PRINCIPAL
+       ============================================ -->
+  <main class="main-content">
+    <div class="volver">
+      <button onclick="window.location.href='menu.html'">⬅ Regresar al Menú</button>
+    </div>
+    
+    <div class="container">
+      <h1><img src="../Img/cliente.webp" alt=""> Módulo de Control de Clientes</h1>
+
+      <!-- Formulario -->
+      <form id="clienteForm" class="cliente-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cliNombre">Nombre completo</label>
+            <input type="text" id="cliNombre" disabled required />
+          </div>
+
+          <div class="form-group">
+            <label for="cliCorreo">Correo electrónico</label>
+            <input type="email" id="cliCorreo" disabled required />
+          </div>
+
+          <div class="form-group">
+            <label for="cliTelefono">Teléfono</label>
+            <input type="tel" id="cliTelefono" disabled required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cliDireccion">Dirección</label>
+            <input type="text" id="cliDireccion" disabled required />
+          </div>
+
+          <div class="form-group">
+            <label for="cliFechaRegistro">Fecha de registro</label>
+            <input type="date" id="cliFechaRegistro" disabled required />
+          </div>
+
+          <div class="form-group">
+            <label for="cliCategoria">Categoría</label>
+            <input type="text" id="cliCategoria" disabled required placeholder="Ej: Cliente frecuente, nuevo..." />
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" id="btnCliNuevo">🆕 Nuevo</button>
+          <button type="button" id="btnCliModificar" disabled>✏️ Modificar</button>
+          <button type="button" id="btnCliEliminar" disabled>🗑️ Eliminar</button>
+          <button type="button" id="btnCliGuardar" disabled>💾 Guardar</button>
+          <button type="button" id="btnCliCancelar" disabled>❌ Cancelar</button>
+        </div>
+      </form>
+
+      <!-- Tabla -->
+      <h2>📋 Lista de clientes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Fecha Registro</th>
+            <th>Categoría</th>
+          </tr>
+        </thead>
+        <tbody id="clienteTable"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <!-- Sidebar JS (debe ir primero) -->
+  <script src="../js/sidebar.js"></script>
+  
+  <!-- Controlador de clientes -->
+  <script src="../controlador/clientes.js"></script>
+</body>
+</html>

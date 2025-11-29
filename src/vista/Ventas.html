@@ -1,0 +1,241 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Ventas - SV Balamtec</title>
+     <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/Ventas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+          <div id="sidebarContainer"></div>
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <a href="#" class="back-link" onclick="window.location.href='menu.html'">← Volver al menú principal</a>
+
+        <!-- Header Section -->
+        <header class="page-header">
+            <div class="header-left">
+                <h1>🛒 Módulo de Ventas</h1>
+                <p class="header-subtitle">Registra y gestiona las ventas de equipos de informática</p>
+            </div>
+            <div class="header-right">
+                <div class="seller-info">
+                    <div class="seller-label">Vendedor</div>
+                    <div class="seller-name">Rosalía Castañeda López</div>
+                    <div class="seller-role">Empleado de Ventas</div>
+                    <div class="seller-location">Sucursal Centro - Mérida</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENEDOR DE DOS COLUMNAS DESDE EL INICIO -->
+        <div class="two-column-layout">
+
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="left-column">
+
+                <!-- Información del Cliente -->
+                <section class="card">
+                    <h2 class="section-title">
+                        <span class="section-icon"><img src="../Img/Usuario.png" width="30" height="30"></span>
+                        Información del Cliente
+                    </h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Seleccionar Cliente *</label>
+                            <select id="selectCliente" class="form-select" required>
+                                <option value="">Seleccione un cliente</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Agregar Productos -->
+                <section class="card">
+                    <h2 class="section-title">
+                        <span class="section-icon">📦</span>
+                        Agregar Productos
+                    </h2>
+                    <div class="form-row">
+                        <div class="form-group flex-2">
+                            <label>Producto *</label>
+                            <select id="selectProducto" class="form-select">
+                                <option value="">Seleccione un producto</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Cantidad *</label>
+                            <input type="number" id="inputCantidad" class="form-input" value="1" min="1">
+                        </div>
+                        <div class="form-group-btn">
+                            <button id="btnAgregar" class="btn-add">+ Agregar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Carrito -->
+                <section class="card">
+                    <h2 class="section-title">
+                        <span class="section-icon">🛒</span>
+                        Carrito de Compras
+                    </h2>
+
+                    <div class="table-container">
+                        <table class="cart-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Producto</th>
+                                    <th>Cant.</th>
+                                    <th>P. Unitario</th>
+                                    <th>Subtotal</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartBody">
+                                <tr>
+                                    <td colspan="6" class="empty-cart">No hay productos agregados</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Dirección de Entrega -->
+                    <div class="delivery-section" id="deliverySection" style="display: none;">
+                        <div class="delivery-header">
+                            <h3 class="section-title">
+                                <span class="section-icon">📍</span>
+                                Dirección de Entrega
+                            </h3>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="checkEnvio">
+                                <span>Requiere envío a domicilio</span>
+                            </label>
+                        </div>
+
+                        <div id="deliveryForm" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group flex-2">
+                                    <label>Calle *</label>
+                                    <input type="text" id="inputCalle" class="form-input" placeholder="Nombre de la calle">
+                                </div>
+                                <div class="form-group">
+                                    <label>Número *</label>
+                                    <input type="text" id="inputNumero" class="form-input" placeholder="123">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Colonia *</label>
+                                    <input type="text" id="inputColonia" class="form-input" placeholder="Nombre de la colonia">
+                                </div>
+                                <div class="form-group">
+                                    <label>Código Postal *</label>
+                                    <input type="text" id="inputCP" class="form-input" placeholder="97000">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group flex-2">
+                                    <label>Ciudad *</label>
+                                    <input type="text" id="inputCiudad" class="form-input" placeholder="Nombre de la ciudad">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Referencias</label>
+                                <textarea id="inputReferencias" class="form-textarea" placeholder="Entre calles, color de casa, etc."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="right-column">
+
+                <!-- Método de Pago -->
+                <section class="card card-small">
+                    <h2 class="section-title">
+                        <span class="section-icon">💳</span>
+                        Método de Pago
+                    </h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Seleccionar método *</label>
+                            <select id="selectMetodo" class="form-select" required>
+                                <option value="">Seleccione método de pago</option>
+                                <option value="efectivo">Efectivo</option>
+                                <option value="tarjeta">Tarjeta</option>
+                                <option value="transferencia">Transferencia</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resumen de Venta -->
+                <aside class="summary-card">
+                    <h2 class="section-title">
+                        <span class="section-icon">📋</span>
+                        Resumen de Venta
+                    </h2>
+
+                    <div class="summary-content">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>IVA (16%):</span>
+                            <span id="iva">$0.00</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-info">
+                            <div class="info-row">
+                                <span class="info-label">Artículos:</span>
+                                <span id="totalArticulos">0</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Cliente:</span>
+                                <span id="clienteSeleccionado">No seleccionado</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Envío:</span>
+                                <span id="estadoEnvio">No</span>
+                            </div>
+                        </div>
+
+                        <button id="btnFinalizar" class="btn-finalize" disabled>
+                            <span>💾</span>
+                            Finalizar Venta
+                        </button>
+
+                        <button id="btnCancelar" class="btn-cancel">
+                            <span>✖</span>
+                            Cancelar Venta
+                        </button>
+                    </div>
+                </aside>
+
+            </div>
+
+        </div>
+
+    </main>
+    <script src="../js/sidebarLoader.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/Ventas2.js"></script>
+    <script src="../controlador/datosVendedor.js"></script>
+    <script src="../controlador/ventas.js"></script>
+
+</body>
+</html>

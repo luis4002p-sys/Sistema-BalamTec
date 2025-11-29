@@ -1,0 +1,7 @@
+ID_Venta,ID_Cliente,Nombre_Cliente,Productos,Fecha,Total,Tipo_Pago,Envio
+1,3,"Maria","3:8:180:1440",2025-11-06,1440,Efectivo,-
+2,2,"Luis","3:5:180:900",2025-11-06,900,Efectivo,-
+3,2,"Luis","4:2:70:140|6:1:680:680",2025-11-20,820,Efectivo,-
+4,5,"Ana García","7:3:250:750|8:2:180:360",2025-11-20,1110,Tarjeta,"Calle 5|123|Centro|97000|Mérida|Casa azul"
+5,8,"Carlos Ruiz","10:1:1500:1500",2025-11-20,1500,Transferencia,-
+6,4,"AAAAAAAAAA","1:1:45.99:45.99|10:1:15:15|9:1:55:55",2025-11-20,134.55,tarjeta

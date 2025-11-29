@@ -1,0 +1,4 @@
+CvUser	CvPerson	Login	Password	FecIni	FecVen	EdoCta
+1	1	Rosalia	cha30lia1025*	16/11/2025	30/11/2025	TRUE
+2	2	Rosario	cha31ris1025*	06/11/2025	30/11/2025	TRUE
+3	3	Guadalupe	12345678	10/11/2025	30/11/2025	TRUE

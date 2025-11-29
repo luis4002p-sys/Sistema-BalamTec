@@ -1,0 +1,290 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Datos Personales - SV Balamtec</title>
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/GestorUsuarios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div id="sidebarContainer"></div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <a href="#" class="back-link" onclick="window.location.href='menu.html'">← Volver al menú principal</a>
+
+        <header class="page-header">
+            <div>
+                <h1>Gestión de Usuarios</h1>
+                <p class="page-subtitle">Administra empleados, clientes y proveedores del sistema</p>
+            </div>
+            <button class="btn-create" id="btnCrearNuevo">
+                <span>+</span>
+                Crear Nuevo
+            </button>
+        </header>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label>Tipo de Persona</label>
+                <div class="select-wrapper">
+                    <select id="tipoPersona" class="form-select">
+                        <option value="todos">Todos</option>
+                        <option value="empleados">Empleados</option>
+                        <option value="clientes">Clientes</option>
+                        <option value="proveedores">Proveedores</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <label>Buscar</label>
+                <div class="search-wrapper">
+                    <input type="text" class="search-input" placeholder="Buscar por nombre, apellidos o email...">
+                    <span class="search-icon"><img src="../Img/Lupa.png" alt="Buscar" width="30" height="30"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>RFC</th>
+                        <th>Ciudad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td>Rosalía</td>
+                        <td>Castañeda López</td>
+                        <td>999-123-4567</td>
+                        <td>rosalia.castaneda@balamtec.com</td>
+                        <td>CALR890523ABC</td>
+                        <td>Mérida</td>
+                        <td class="actions-cell">
+                            <button class="btn-icon btn-edit" data-id="1">
+                                <img src="../Img/Lapiz.png" alt="Editar" width="30" height="30">
+                            </button>
+                            <button class="btn-icon btn-delete" data-id="1">
+                                <img src="../Img/Basura.png" alt="Eliminar" width="30" height="30">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Carlos</td>
+                        <td>Pérez García</td>
+                        <td>999-234-5678</td>
+                        <td>carlos.perez@balamtec.com</td>
+                        <td>PEGC920315XYZ</td>
+                        <td>Mérida</td>
+                        <td class="actions-cell">
+                            <button class="btn-icon btn-edit" data-id="2">
+                                <img src="../Img/Lapiz.png" alt="Editar" width="30" height="30">
+                            </button>
+                            <button class="btn-icon btn-delete" data-id="2">
+                                <img src="../Img/Basura.png" alt="Eliminar" width="30" height="30">
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal Crear Empleado -->
+    <div id="modalCrear" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear Empleado</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <p class="modal-subtitle">Complete la información del empleado. Todos los campos son requeridos.</p>
+            
+            <form id="formCrear">
+                <section class="form-section">
+                    <h3>Información Personal</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre(s) *</label>
+                            <input type="text" name="nombre" placeholder="Ingrese el nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Apellidos *</label>
+                            <input type="text" name="apellidos" placeholder="Ingrese los apellidos" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Teléfono *</label>
+                            <input type="tel" name="telefono" placeholder="999-123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" placeholder="ejemplo@correo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>RFC</label>
+                            <input type="text" name="rfc" placeholder="RFC">
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="form-section">
+                    <h3>Dirección</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Calle *</label>
+                            <input type="text" name="calle" placeholder="Nombre de la calle" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Número *</label>
+                            <input type="text" name="numero" placeholder="123" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Colonia *</label>
+                            <input type="text" name="colonia" placeholder="Nombre de la colonia" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Código Postal *</label>
+                            <input type="text" name="codigoPostal" placeholder="97000" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ciudad *</label>
+                            <input type="text" name="ciudad" placeholder="Nombre de la ciudad" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Estado *</label>
+                            <input type="text" name="estado" placeholder="Nombre del estado" required>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" id="btnCancelarCrear">Cancelar</button>
+                    <button type="submit" class="btn-primary">
+                        <span><img src="../Img/guardar.png" alt="Guardar" width="30" height="30"></span>
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Modificar Empleado -->
+    <div id="modalModificar" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Modificar Empleado</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <p class="modal-subtitle">Complete la información del empleado. Todos los campos son requeridos.</p>
+            
+            <form id="formModificar">
+                <section class="form-section">
+                    <h3>Información Personal</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre(s) *</label>
+                            <input type="text" id="editNombre" value="Rosalía" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Apellidos *</label>
+                            <input type="text" id="editApellidos" value="Castañeda López" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Teléfono *</label>
+                            <input type="tel" id="editTelefono" value="999-123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" id="editEmail" value="rosalia.castaneda@" required>
+                        </div>
+                        <div class="form-group">
+                            <label>RFC *</label>
+                            <input type="text" id="editRFC" value="CALR890523ABC" required>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="form-section">
+                    <h3>Dirección</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Calle *</label>
+                            <input type="text" id="editCalle" value="Av. Principal" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Número *</label>
+                            <input type="text" id="editNumero" value="123" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Colonia *</label>
+                            <input type="text" id="editColonia" value="Centro" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Código Postal *</label>
+                            <input type="text" id="editCP" value="97000" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ciudad *</label>
+                            <input type="text" id="editCiudad" value="Mérida" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Estado *</label>
+                            <input type="text" id="editEstado" value="Yucatán" required>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" id="btnCancelarModificar">Cancelar</button>
+                    <button type="submit" class="btn-primary">
+                        <span>💾</span>
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Confirmar Eliminación -->
+    <div id="modalEliminar" class="modal">
+        <div class="modal-content modal-small">
+            <h2>¿Está seguro?</h2>
+            <p class="delete-warning">Esta acción no se puede deshacer. Se eliminará permanentemente el registro de <strong id="nombreEliminar">Rosalía Castañeda López</strong>.</p>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="btnCancelarEliminar">Cancelar</button>
+                <button type="button" class="btn-danger" id="btnConfirmarEliminar">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/sidebarLoader.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/gestorUsuarios.js"></script>
+    <script src="../controlador/Personas.js" type="module"></script>
+</body>
+</html>

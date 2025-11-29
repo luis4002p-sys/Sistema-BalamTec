@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuración de Perfil - SV Balamtec</title>
+  
+  <!-- CSS de la página de perfil -->
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/Perfil.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="sidebarContainer"></div>   <!-- Sidebar -->
+  <!-- SVG ocultos para usar como iconos -->
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <symbol id="monitor-off" viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" 
+              fill="none" stroke="#6B7280" stroke-width="2"/>
+        <rect x="4" y="5" width="16" height="10" rx="1" ry="1" 
+              fill="#4B5563"/>
+        <line x1="12" y1="17" x2="12" y2="20" 
+              stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+        <line x1="8" y1="21" x2="16" y2="21" 
+              stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+    
+      <symbol id="monitor-on" viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" 
+              fill="none" stroke="#10B981" stroke-width="2" class="monitor-glow-effect"/>
+        <rect x="4" y="5" width="16" height="10" rx="1" ry="1" 
+              fill="#34D399" class="monitor-glow-effect"/>
+        <rect x="5" y="6" width="6" height="4" rx="0.5" ry="0.5" 
+              fill="#6EE7B7" opacity="0.8" class="monitor-glow-effect"/>
+        <line x1="12" y1="17" x2="12" y2="20" 
+              stroke="#10B981" stroke-width="2" stroke-linecap="round" class="monitor-glow-effect"/>
+        <line x1="8" y1="21" x2="16" y2="21" 
+              stroke="#10B981" stroke-width="2" stroke-linecap="round" class="monitor-glow-effect"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!--  CONTENIDO PRINCIPAL (SIN SIDEBAR)  -->
+  <main class="main-content">
+    <div class="volver">
+      <button onclick="window.location.href='menu.html'">
+        <i class="fas fa-arrow-left"></i> Volver al menú principal
+      </button>
+    </div>
+    
+    <div class="container">
+      <!-- Header -->
+      <div class="header-section">
+        <div class="header-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="header-text">
+          <h1>Configuración de Perfil</h1>
+          <p>Gestiona tu información personal y credenciales de acceso</p>
+        </div>
+      </div>
+
+      <div class="content-wrapper">
+        <!-- Columna Izquierda: Foto de Perfil y Seguridad -->
+        <aside class="left-column">
+          <!-- Foto de Perfil -->
+          <div class="profile-photo-section">
+            <h3>Foto de Perfil</h3>
+            <div class="profile-photo-container">
+              <div class="profile-photo">
+                <span class="photo-initial">A</span>
+                <button class="edit-photo-btn">
+                  <i class="fas fa-camera"></i>
+                </button>
+              </div>
+              <div class="profile-info-display">
+                <h4 id="displayName">admin</h4>
+                <p class="role-display">Empleado</p>
+                <p class="area-display">Ventas</p>
+              </div>
+            </div>
+            <div class="photo-requirements">
+              <p><strong>Tamaño máximo:</strong> 2MB</p>
+              <p><strong>Formatos:</strong> JPG, PNG, GIF</p>
+              <p><strong>Resolución recomendada:</strong> 400x400px</p>
+            </div>
+          </div>
+
+          <!-- Sección de Seguridad -->
+          <div class="security-section">
+            <div class="security-icon">
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <h3>Seguridad</h3>
+            <p class="security-description">Los cambios en tu perfil se reflejarán en:</p>
+            <ul class="security-list">
+              <li><i class="fas fa-check"></i> Facturas y ventas</li>
+              <li><i class="fas fa-check"></i> Pedidos y compras</li>
+              <li><i class="fas fa-check"></i> Registros de usuario</li>
+              <li><i class="fas fa-check"></i> Historial de transacciones</li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Columna Derecha: Formularios -->
+        <div class="right-column">
+          <!-- Información Personal -->
+          <section class="form-section">
+            <div class="section-header">
+              <i class="fas fa-user-circle"></i>
+              <h2>Información Personal</h2>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nombre">Nombre(s) <span class="required">*</span></label>
+                <input type="text" id="nombre" value="admin" required>
+              </div>
+              <div class="form-group">
+                <label for="apellidos">Apellidos <span class="required">*</span></label>
+                <input type="text" id="apellidos" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <div class="input-icon">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" id="email" value="admin@balamtec.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono <span class="required">*</span></label>
+                <div class="input-icon">
+                  <i class="fas fa-phone"></i>
+                  <input type="tel" id="telefono" placeholder="999-123-4567" required>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dirección -->
+          <section class="form-section">
+            <div class="section-header">
+              <i class="fas fa-location-dot"></i>
+              <h2>Dirección</h2>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="calle">Calle <span class="required">*</span></label>
+                <input type="text" id="calle" placeholder="Av. Principal" required>
+              </div>
+              <div class="form-group">
+                <label for="numero">Número <span class="required">*</span></label>
+                <input type="text" id="numero" placeholder="123" required>
+              </div>
+              <div class="form-group">
+                <label for="colonia">Colonia</span></label>
+                <input type="text" id="colonia" value="Centro">
+              </div>
+              <div class="form-group">
+                <label for="codigoPostal">Código Postal</label>
+                <input type="text" id="codigoPostal" value="97000">
+              </div>
+              <div class="form-group">
+                <label for="ciudad">Ciudad <span class="required">*</span></label>
+                <input type="text" id="ciudad" value="Mérida" required>
+              </div>
+              <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" value="Yucatán">
+              </div>
+            </div>
+          </section>
+
+          <!-- Credenciales de Acceso -->
+          <section class="form-section">
+            <div class="section-header">
+              <i class="fas fa-key"></i>
+              <h2>Credenciales de Acceso</h2>
+            </div>
+            
+            <div class="alert-warning">
+              <i class="fas fa-exclamation-circle"></i>
+              <span>Por seguridad, solo completa esta sección si deseas cambiar tu contraseña.</span>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="nombreUsuario">Nombre de Usuario <span class="required">*</span></label>
+                <input type="text" id="nombreUsuario" value="admin" required>
+              </div>
+              <div class="form-group full-width">
+                <label for="contrasenaActual">Contraseña Actual</label>
+                <div class="input-icon">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" id="contrasenaActual" placeholder="Ingresa tu contraseña actual">
+                  <button type="button" class="password-toggle" data-target="contrasenaActual">
+                    <svg class="monitor-icon" width="24" height="24">
+                      <use href="#monitor-off"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group full-width">
+                <label for="nuevaContrasena">Nueva Contraseña</label>
+                <div class="input-icon">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" id="nuevaContrasena" placeholder="Mínimo 8 caracteres">
+                  <button type="button" class="password-toggle" data-target="nuevaContrasena">
+                    <svg class="monitor-icon" width="24" height="24">
+                      <use href="#monitor-off"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group full-width">
+                <label for="confirmarContrasena">Confirmar Nueva Contraseña</label>
+                <div class="input-icon">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" id="confirmarContrasena" placeholder="Repite la nueva contraseña">
+                  <button type="button" class="password-toggle" data-target="confirmarContrasena">
+                    <svg class="monitor-icon" width="24" height="24">
+                      <use href="#monitor-off"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Botones de Acción -->
+          <div class="action-buttons">
+            <button type="button" class="btn-cancel">
+              <i class="fas fa-times"></i>
+              Cancelar
+            </button>
+            <button type="button" class="btn-save">
+              <i class="fas fa-floppy-disk"></i>
+              Guardar Cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <script>
+    document.querySelectorAll('.password-toggle').forEach(button => {
+      button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        const svg = this.querySelector('use');
+        
+        if (input.type === 'password') {
+          input.type = 'text';
+          svg.setAttribute('href', '#monitor-on');
+        } else {
+          input.type = 'password';
+          svg.setAttribute('href', '#monitor-off');
+        }
+      });
+    });
+  </script>
+    <script src="../js/sidebarLoader.js"></script>
+    <script src="../js/sidebar.js"></script>
+  <script src="../controlador/perfil.js"></script>
+</body>
+</html>

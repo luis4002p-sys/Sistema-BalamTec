@@ -1,0 +1,345 @@
+/* SIDEBAR COMPONENT STYLES - SV BALAMTEC */
+
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    border-right: 1px solid #e5e7eb;
+}
+
+/* Logo - Header Verde */
+.logo {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    text-align: left;
+    padding: 1.5rem 1.5rem;
+    margin-bottom: 0;
+    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+}
+
+.logo h2 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* User Profile Section */
+.user-profile {
+    background: #ffffff;
+    border-radius: 0;
+    padding: 1.5rem 1rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.user-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #10b981;
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
+}
+
+
+.user-avatar span {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.user-info h3 {
+    color: #1f2937;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-role {
+    color: #6b7280;
+    font-size: 0.8rem;
+    margin: 0 0 0.75rem;
+    font-weight: 400;
+}
+
+.user-detail {
+    color: #4b5563;
+    font-size: 0.75rem;
+    margin: 0.3rem 0;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-detail strong {
+    color: #374151;
+    font-weight: 500;
+}
+
+.user-detail span {
+    color: #6b7280;
+    text-align: right;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Menu Navigation */
+.menu {
+    flex: 1;
+    margin-bottom: 0;
+    padding: 0.5rem 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-bottom: 0;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    padding: 0.875rem 1.5rem;
+    color: #4b5563;
+    text-decoration: none;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    position: relative;
+    border-left: 3px solid transparent;
+    font-size: 0.9rem;
+}
+
+.menu a:hover {
+    background: #f3f4f6;
+    color: #059669;
+}
+
+.menu li.active a {
+    background: #ecfdf5;
+    color: #059669;
+    font-weight: 500;
+    border-left: 3px solid #10b981;
+}
+
+.menu li.active a::before {
+    display: none;
+}
+
+/* Iconos del menú con soporte para PNG */
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.875rem;
+}
+
+.menu-icon i {
+    font-size: 1rem;
+}
+
+/* Soporte para iconos PNG - AGREGA TUS RUTAS AQUÍ */
+.menu-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    /* Filtro para colorear el icono según el estado */
+    filter: brightness(0) saturate(100%) invert(39%) sepia(6%) saturate(728%) hue-rotate(182deg) brightness(94%) contrast(87%);
+}
+
+.menu li.active .menu-icon img,
+.menu a:hover .menu-icon img {
+    /* Color verde cuando está activo o hover */
+    filter: brightness(0) saturate(100%) invert(46%) sepia(85%) saturate(522%) hue-rotate(102deg) brightness(95%) contrast(92%);
+}
+
+/* Arrow indicator */
+.arrow {
+    margin-left: auto;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #10b981;
+}
+
+.menu li.active .arrow {
+    opacity: 1;
+}
+
+.menu a:hover .arrow {
+    opacity: 0.5;
+}
+
+/* Logout Section */
+.logout {
+    padding: 1rem 0;
+    border-top: 1px solid #e5e7eb;
+    background: #fafafa;
+}
+
+.logout a {
+    display: flex;
+    align-items: center;
+    padding: 0.875rem 1.5rem;
+    color: #dc2626;
+    text-decoration: none;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.logout a:hover {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.logout-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.875rem;
+}
+
+.logout-icon i {
+    font-size: 1rem;
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 240px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+/* ============================================================
+   LAYOUT PARA PÁGINAS CON SIDEBAR
+   ============================================================ */
+
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    background: #f9fafb;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Contenedor principal que estará al lado del sidebar */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    width: calc(100% - 280px);
+    box-sizing: border-box;
+}
+
+/* Ajuste responsivo para móviles */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Estilos adicionales para el contenido principal */
+.content-header {
+    margin-bottom: 2rem;
+}
+
+.content-header h1 {
+    color: #1f2937;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+}
+
+.content-header p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.card h3 {
+    color: #1f2937;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+}
+
+.card p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+#sidebarContainer {
+    position: relative;
+    z-index: 2000;
+}

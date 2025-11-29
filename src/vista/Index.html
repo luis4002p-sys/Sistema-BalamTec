@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SV Balamtec</title>
+    <link rel="stylesheet" href="../css/login.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- SVG ocultos para usar como iconos -->
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <symbol id="monitor-off" viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" 
+              fill="none" stroke="#6B7280" stroke-width="2"/>
+        <rect x="4" y="5" width="16" height="10" rx="1" ry="1" 
+              fill="#4B5563"/>
+        <line x1="12" y1="17" x2="12" y2="20" 
+              stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+        <line x1="8" y1="21" x2="16" y2="21" 
+              stroke="#6B7280" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+    
+      <symbol id="monitor-on" viewBox="0 0 24 24">
+             <rect x="2" y="3" width="20" height="14" rx="2" ry="2" 
+              fill="none" stroke="#10B981" stroke-width="2" class="monitor-glow-effect"/>
+        <rect x="4" y="5" width="16" height="10" rx="1" ry="1" 
+              fill="#34D399" class="monitor-glow-effect"/>
+        <rect x="5" y="6" width="6" height="4" rx="0.5" ry="0.5" 
+              fill="#6EE7B7" opacity="0.8" class="monitor-glow-effect"/>
+        <line x1="12" y1="17" x2="12" y2="20" 
+              stroke="#10B981" stroke-width="2" stroke-linecap="round" class="monitor-glow-effect"/>
+        <line x1="8" y1="21" x2="16" y2="21" 
+              stroke="#10B981" stroke-width="2" stroke-linecap="round" class="monitor-glow-effect"/>
+      </symbol>
+    </defs>
+  </svg>
+
+    <div class="background"></div>
+
+    <div class="login-container">
+        <!-- Login Card -->
+        <div class="login-card">
+            <!-- Header -->
+            <div class="card-header">
+                <div class="logo-circle">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <h1><i class="fas fa-user-lock"></i> Bienvenido</h1>
+                <p>Sistema de Ventas - Equipos de Informática</p>
+            </div>
+
+            <!-- Form -->
+            <form class="login-form" id="loginForm">
+                <div class="form-intro">
+                    <p>Inicia sesión en tu cuenta</p>
+                </div>
+
+                <!-- General Error Alert -->
+                <div class="alert" id="generalAlert">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="alertMessage"></span>
+                </div>
+
+                <!-- Username Field -->
+                <div class="form-group">
+                    <label class="form-label" for="username">
+                        <i class="fas fa-user"></i> Nombre de usuario
+                    </label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            class="form-input"
+                            placeholder="Ingrese su usuario"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="error-message" id="usernameError">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label class="form-label" for="password">
+                        <i class="fas fa-key"></i> Contraseña
+                    </label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="form-input"
+                            placeholder="Ingrese su contraseña"
+                            autocomplete="off"
+                            required
+                        />
+                        <button type="button" class="password-toggle" id="togglePassword" title="Mostrar contraseña">
+                            <svg class="monitor-icon" id="monitorIcon" width="24" height="24" viewBox="0 0 50 70">
+                                <use href="#monitor-off"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="error-message" id="passwordError">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </button>
+
+                <!-- Message Area -->
+                <p class="msg"></p>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Balamtec - Sistema de Ventas</p>
+        </div>
+    </div>
+
+    <script src="../js/loginVista.js"></script> 
+     <script src="../controlador/login.js"></script>
+
+</body>
+</html>
